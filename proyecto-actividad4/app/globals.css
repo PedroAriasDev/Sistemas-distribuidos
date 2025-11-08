@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+/* Estilos base del body para tema oscuro */
+body {
+  background: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+/* Contenedor principal de la lista */
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Card individual de pokémon */
+.pokemon-card {
+  background: 
+    linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+  border: 5px solid transparent;
+  border-image: linear-gradient(
+    145deg, 
+    #e3350d 0%, 
+    #ffcc00 50%, 
+    #e3350d 100%
+  ) 1;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 6px rgba(227, 53, 13, 0.3),
+    inset 0 1px 3px rgba(255,255,255,0.5);
+}
+
+.pokemon-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 
+    0 12px 25px rgba(255, 0, 0, 0.6),
+    0 0 30px rgba(255, 204, 0, 0.4),
+    inset 0 1px 5px rgba(255,255,255,0.8);
+}
+
+/* ID del pokémon */
+.pokemon-id {
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Nombre del pokémon */
+.pokemon-name {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 20px;
+  color: #e3350d;  /* Rojo Pokémon */
+  margin: 10px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Imagen del pokémon */
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Tipo del pokémon */
+.pokemon-type {
+  background: #333;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0;
+  text-transform: uppercase;
+}
+
+/* Contador de clicks */
+.click-count {
+  background: linear-gradient(145deg, #ff0000, #cc0000);
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Mensaje de cargando */
+.centrada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  font-weight: bold;
+  color: #e3350d;
+}
+
+/* Colores por tipo de pokémon */
+.type-fire {
+  background: linear-gradient(145deg, #ff4500, #ff6347);
+  color: #fff;
+  border-color: #8b0000;
+}
+
+.type-water {
+  background: linear-gradient(145deg, #4169e1, #1e90ff);
+  color: #fff;
+  border-color: #00008b;
+}
+
+.type-grass {
+  background: linear-gradient(145deg, #32cd32, #00ff00);
+  color: #000;
+  border-color: #006400;
+}
+
+.type-electric {
+  background: linear-gradient(145deg, #ffd700, #ffff00);
+  color: #000;
+  border-color: #ff8c00;
+}
+
+.type-psychic {
+  background: linear-gradient(145deg, #ff1493, #ff69b4);
+  color: #fff;
+  border-color: #8b008b;
+}
+
+.type-ice {
+  background: linear-gradient(145deg, #00ffff, #afeeee);
+  color: #000;
+  border-color: #00ced1;
+}
+
+.type-dragon {
+  background: linear-gradient(145deg, #6a5acd, #9370db);
+  color: #fff;
+  border-color: #4b0082;
+}
+
+.type-dark {
+  background: linear-gradient(145deg, #2f4f4f, #000000);
+  color: #fff;
+  border-color: #000;
+}
+
+.type-fairy {
+  background: linear-gradient(145deg, #ff69b4, #ffb6c1);
+  color: #000;
+  border-color: #ff1493;
+}
+
+.type-normal {
+  background: linear-gradient(145deg, #a8a878, #c0c0c0);
+  color: #000;
+  border-color: #666;
+}
+
+.type-fighting {
+  background: linear-gradient(145deg, #c03028, #ff0000);
+  color: #fff;
+  border-color: #8b0000;
+}
+
+.type-flying {
+  background: linear-gradient(145deg, #a890f0, #87ceeb);
+  color: #000;
+  border-color: #4682b4;
+}
+
+.type-poison {
+  background: linear-gradient(145deg, #a040a0, #9932cc);
+  color: #fff;
+  border-color: #4b0082;
+}
+
+.type-ground {
+  background: linear-gradient(145deg, #e0c068, #daa520);
+  color: #000;
+  border-color: #8b4513;
+}
+
+.type-rock {
+  background: linear-gradient(145deg, #b8a038, #a0522d);
+  color: #fff;
+  border-color: #654321;
+}
+
+.type-bug {
+  background: linear-gradient(145deg, #a8b820, #9acd32);
+  color: #000;
+  border-color: #556b2f;
+}
+
+.type-ghost {
+  background: linear-gradient(145deg, #705898, #9370db);
+  color: #fff;
+  border-color: #4b0082;
+}
+
+.type-steel {
+  background: linear-gradient(145deg, #b8b8d0, #c0c0c0);
+  color: #000;
+  border-color: #696969;
+}
