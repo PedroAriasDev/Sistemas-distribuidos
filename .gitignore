@@ -1,0 +1,32 @@
+# Dependencias
+node_modules/
+package-lock.json
+yarn.lock
+
+# Next.js
+.next/
+out/
+build/
+
+# Archivos de entorno
+.env
+.env.local
+.env.production
+
+# Datos
+uploads/
+data/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
